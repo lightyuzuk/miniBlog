@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>blog</title>
+    <link href="site_media/css/bootstrap.min.css" rel="stylesheet">
+<!--     <link href="site_media/css/pretiffy.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="site_media/css/blog.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    {% block css %}{% endblock %}
+
+</head>
+<body>
+	{% include 'common/nav.html' %}
+	<div class="container">
+		<div class="blog-header">
+			<h1 class="blog-header">{{myBlog.name}}</h1>
+			<p class="lead blog-description">{{myBlog.description}}</p>
+		</div>
+	<!-- #####################################################################正文 -->
+		<div class="row">
+			<div class="col-sm-8 blog-main">
+				{% block main %}{% endblock %}
+				
+			</div>
+			<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+				<div class="sidebar-module sidebar-module-inset">
+					<h4>blog-side-1-title</h4>
+					<p>blog-side-1-content</p>
+				</div>
+				<div class="sidebar-module">
+					<h4>Archievs</h4>
+					<div class="row">
+						<div class="cl-sm-4">
+							<button class="btn btn-sm">blog-category-1</button>
+						</div>
+						<div class="cl-sm-4">
+							<button class="btn btn-sm">blog-category-2</button>
+						</div>
+						<div class="cl-sm-4">
+							<button class="btn btn-sm">blog-category-3</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!-- #######################################################footer -->
+		{% include 'common/footer.html' %}
+	</div>
+    <script src="site_media/js/jquery.min.js"></script>
+    <script src="site_media/js/bootstrap.min.js"></script>
+    <script src="site_media/js/prettify.js"></script> 
+    {% block script %}{% endblock %}
+    {% block hidden %}{% endblock %}   
+</body>
+</html>
